@@ -192,8 +192,9 @@ class MySqlConn:
             with self._db_connection.cursor() as cursor:
                 sqlCommand = "CREATE TABLE Twitter("
                 sqlCommand = sqlCommand + "screenName VARCHAR(200) NOT NULL COLLATE utf8mb4_unicode_ci, "
-                sqlCommand = sqlCommand + "tweets JSON NULL, "
-                sqlCommand = sqlCommand + "dateWritten DATE NULL, "
+                sqlCommand = sqlCommand + "tweet JSON NULL, "
+                sqlCommand = sqlCommand + "entities JSON NULL,"
+                sqlCommand = sqlCommand + "dateWritten DATE NULL,"
                 sqlCommand = sqlCommand + "dateScraped TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, "
                 sqlCommand = sqlCommand + "PRIMARY KEY(screenName)"
                 sqlCommand = sqlCommand + ") COLLATE utf8mb4_unicode_ci"
